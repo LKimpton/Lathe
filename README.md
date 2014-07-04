@@ -9,7 +9,7 @@ This is Kimpton's Lathe Mod
 
 MAIN
 
-Basic Principle - Make coloumns in Minecraft.
+Basic Principle - Make columns in Minecraft.
 Hey this is my Mod - WIP, feel free to help out! :)
 
 So this is a mod that takes the real life function of Lathes to make columns for all blocks. Hopefully I will intergrate Universal electricisty. And possibly functions to make the lathe spin ect.
