@@ -1,8 +1,9 @@
-package lathe.common;
+package lathe;
 
 import lathe.block.LargeColumnProperties;
 import lathe.block.entity.TileEntityBlock;
 import lathe.block.render.TileEntityLargeColumnRenderer;
+import lathe.common.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;

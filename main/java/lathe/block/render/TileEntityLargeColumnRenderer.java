@@ -1,10 +1,10 @@
 package lathe.block.render;
 
+import lathe.KimptonCore;
 import lathe.block.LargeColumnProperties;
 import lathe.block.entity.TileEntityBlock;
 import lathe.block.model.ModelLargeColumn;
 import lathe.common.ClientProxy;
-import lathe.common.KimptonCore;
 
 import org.lwjgl.opengl.GL11;
 

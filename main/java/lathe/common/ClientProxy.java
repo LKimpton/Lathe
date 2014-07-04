@@ -1,5 +1,6 @@
 package lathe.common;
 
+import lathe.KimptonCore;
 import lathe.block.LargeColumnProperties;
 import lathe.block.entity.TileEntityBlock;
 import lathe.block.render.HandEntityRenderer;
