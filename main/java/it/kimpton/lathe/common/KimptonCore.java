@@ -1,0 +1,82 @@
+package it.kimpton.lathe.common;
+
+import it.kimpton.lathe.block.LargeColumnProperties;
+import it.kimpton.lathe.block.entity.TileEntityBlock;
+import it.kimpton.lathe.block.render.TileEntityLargeColumnRenderer;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+
+@Mod(modid = KimptonCore.modid, version = KimptonCore.VERSION)
+public class KimptonCore
+{
+	
+	public static final String modid = "kimpton";
+    public static final String VERSION = "1.0";  
+    
+    //Own Creative Tabs
+    public static CreativeTabs latheTab;  
+    
+    //Defining Blocks
+    public static Block largeColumnStone;
+    public static Block largeColumnBrick;
+    
+    public static Block allBlocks;
+    
+    //Proxy Settings
+    @SidedProxy(clientSide = "it.kimpton.lathe.common.ClientProxy", serverSide = "it.kimpton.lathe.common.CommonProxy")
+    public static CommonProxy kimptonProxy;
+  
+    
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent preEvent){
+    	//Registering Creative Tabs
+    	latheTab = new CreativeTabs("kimpton"){
+    		@SideOnly(Side.CLIENT)
+    		public Item getTabIconItem(){
+    			return Item.getItemFromBlock(KimptonCore.largeColumnStone);
+    		}
+    	}; 
+    	
+    	//Define Block Properties
+    	largeColumnStone = new LargeColumnProperties(Material.rock).setBlockName("ModelColumnStone").setHardness(20.0F).setResistance(1.0F);
+    	largeColumnBrick = new LargeColumnProperties(Material.rock).setBlockName("ModelColumnBrick").setHardness(20.0F).setResistance(1.0F);
+    	
+    	
+    	//Registering Blocks
+    	GameRegistry.registerBlock(largeColumnStone, "ModelCollumStone"); 
+    	GameRegistry.registerBlock(largeColumnBrick, "ModelCollumBrick"); 
+    	
+    	//Registering Tile Entities
+    	GameRegistry.registerTileEntity(TileEntityBlock.class, "ModelColumnStone");  
+    	GameRegistry.registerTileEntity(TileEntityBlock.class, "ModelColumnBrick");
+    	
+    	//Rendering Blocks and Mobs
+       	kimptonProxy.renderInfomation();
+    	kimptonProxy.registerTileEntitySpecialRenderer();
+    }
+    
+    @EventHandler
+    public void init(FMLInitializationEvent event){
+    	
+    }    
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent postEvent){
+    	
+    }
+    
+
+}
