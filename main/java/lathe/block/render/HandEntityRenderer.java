@@ -1,4 +1,4 @@
-package it.kimpton.lathe.block.render;
+package lathe.block.render;
 
 import org.lwjgl.opengl.GL11;
 

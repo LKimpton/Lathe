@@ -1,4 +1,4 @@
-package it.kimpton.lathe.common;
+package lathe.common;
 
 public class CommonProxy {
 	

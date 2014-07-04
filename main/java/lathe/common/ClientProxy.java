@@ -1,9 +1,9 @@
-package it.kimpton.lathe.common;
+package lathe.common;
 
-import it.kimpton.lathe.block.LargeColumnProperties;
-import it.kimpton.lathe.block.entity.TileEntityBlock;
-import it.kimpton.lathe.block.render.HandEntityRenderer;
-import it.kimpton.lathe.block.render.TileEntityLargeColumnRenderer;
+import lathe.block.LargeColumnProperties;
+import lathe.block.entity.TileEntityBlock;
+import lathe.block.render.HandEntityRenderer;
+import lathe.block.render.TileEntityLargeColumnRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;

@@ -1,8 +1,8 @@
-package it.kimpton.lathe.common;
+package lathe.common;
 
-import it.kimpton.lathe.block.LargeColumnProperties;
-import it.kimpton.lathe.block.entity.TileEntityBlock;
-import it.kimpton.lathe.block.render.TileEntityLargeColumnRenderer;
+import lathe.block.LargeColumnProperties;
+import lathe.block.entity.TileEntityBlock;
+import lathe.block.render.TileEntityLargeColumnRenderer;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -19,12 +19,13 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+// This is my main file!
 
 @Mod(modid = KimptonCore.modid, version = KimptonCore.VERSION)
 public class KimptonCore
 {
 	
-	public static final String modid = "kimpton";
+	public static final String modid = "lathe";
     public static final String VERSION = "1.0";  
     
     //Own Creative Tabs
@@ -37,7 +38,7 @@ public class KimptonCore
     public static Block allBlocks;
     
     //Proxy Settings
-    @SidedProxy(clientSide = "it.kimpton.lathe.common.ClientProxy", serverSide = "it.kimpton.lathe.common.CommonProxy")
+    @SidedProxy(clientSide = "lathe.common.ClientProxy", serverSide = "lathe.common.CommonProxy")
     public static CommonProxy kimptonProxy;
   
     

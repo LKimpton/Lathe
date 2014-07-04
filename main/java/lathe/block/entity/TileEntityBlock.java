@@ -1,4 +1,4 @@
-package it.kimpton.lathe.block.entity;
+package lathe.block.entity;
 
 import net.minecraft.tileentity.TileEntity;
 

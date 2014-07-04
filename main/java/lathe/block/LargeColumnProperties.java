@@ -1,9 +1,9 @@
-package it.kimpton.lathe.block;
+package lathe.block;
 
-import it.kimpton.lathe.block.entity.TileEntityBlock;
-import it.kimpton.lathe.block.render.TileEntityLargeColumnRenderer;
-import it.kimpton.lathe.common.ClientProxy;
-import it.kimpton.lathe.common.KimptonCore;
+import lathe.block.entity.TileEntityBlock;
+import lathe.block.render.TileEntityLargeColumnRenderer;
+import lathe.common.ClientProxy;
+import lathe.common.KimptonCore;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
