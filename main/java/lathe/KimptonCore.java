@@ -1,5 +1,7 @@
 package lathe;
 
+import java.util.ArrayList;
+
 import lathe.block.LargeColumnProperties;
 import lathe.block.entity.TileEntityBlock;
 import lathe.block.render.TileEntityLargeColumnRenderer;
@@ -33,10 +35,8 @@ public class KimptonCore
     public static CreativeTabs latheTab;  
     
     //Defining Blocks
-    public static Block largeColumnStone;
-    public static Block largeColumnBrick;
-    
-    public static Block allBlocks;
+    public static Block allLarge;
+  
     
     //Proxy Settings
     @SidedProxy(clientSide = "lathe.common.ClientProxy", serverSide = "lathe.common.CommonProxy")
@@ -49,10 +49,20 @@ public class KimptonCore
     	latheTab = new CreativeTabs("kimpton"){
     		@SideOnly(Side.CLIENT)
     		public Item getTabIconItem(){
-    			return Item.getItemFromBlock(KimptonCore.largeColumnStone);
+    			return Item.getItemFromBlock(KimptonCore.allLarge);
     		}
-    	}; 
+    	};
     	
+    	String[] vanillaBlocks = { "Stone", "Brick", };
+    	
+    	for(int i = 0; i < vanillaBlocks.length; i ++){    		
+    		allLarge = new LargeColumnProperties(Material.rock).setBlockName("ModelColumn" + vanillaBlocks[i]).setHardness(20.0F).setResistance(1.0F);
+    		GameRegistry.registerBlock(allLarge, "ModelColumn" + vanillaBlocks[i]);
+    		GameRegistry.registerTileEntity(TileEntityBlock.class, "ModelColumn" + vanillaBlocks[i]);
+    	}
+    	
+    	
+    	/** OLD CODE
     	//Define Block Properties
     	largeColumnStone = new LargeColumnProperties(Material.rock).setBlockName("ModelColumnStone").setHardness(20.0F).setResistance(1.0F);
     	largeColumnBrick = new LargeColumnProperties(Material.rock).setBlockName("ModelColumnBrick").setHardness(20.0F).setResistance(1.0F);
@@ -66,9 +76,12 @@ public class KimptonCore
     	GameRegistry.registerTileEntity(TileEntityBlock.class, "ModelColumnStone");  
     	GameRegistry.registerTileEntity(TileEntityBlock.class, "ModelColumnBrick");
     	
+    	*/
+    	
     	//Rendering Blocks and Mobs
        	kimptonProxy.renderInfomation();
     	kimptonProxy.registerTileEntitySpecialRenderer();
+    
     }
     
     @EventHandler

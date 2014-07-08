@@ -14,7 +14,7 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void renderInfomation(){	
-		
+		/**
 		//The Large Stone Column
 		TileEntitySpecialRenderer largeColumnStone = new TileEntityLargeColumnRenderer(KimptonCore.largeColumnStone.getUnlocalizedName().substring(5));
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBlock.class, largeColumnStone);
@@ -24,6 +24,13 @@ public class ClientProxy extends CommonProxy {
 		TileEntitySpecialRenderer largeColumnBrick = new TileEntityLargeColumnRenderer(KimptonCore.largeColumnBrick.getUnlocalizedName().substring(5));
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBlock.class, largeColumnBrick);
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(KimptonCore.largeColumnBrick), new HandEntityRenderer(largeColumnBrick, new TileEntityBlock()));
+		
+		*/
+		
+		//All Large Columns
+		TileEntitySpecialRenderer allLarge = new TileEntityLargeColumnRenderer(KimptonCore.allLarge.getUnlocalizedName().substring(5));
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBlock.class, allLarge);
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(KimptonCore.allLarge), new HandEntityRenderer(allLarge, new TileEntityBlock()));
 	}
 	
 	public void registerTileEntitySpecialRenderer(){	
