@@ -1,10 +1,12 @@
 package lathe.common;
 
+import java.util.ArrayList;
+
 import lathe.KimptonCore;
 import lathe.block.LargeColumnProperties;
 import lathe.block.entity.TileEntityBlock;
 import lathe.block.render.HandEntityRenderer;
-import lathe.block.render.TileEntityLargeColumnRenderer;
+import lathe.block.render.TileEntityRendererLargeColumn;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -27,10 +29,20 @@ public class ClientProxy extends CommonProxy {
 		
 		*/
 		
+		/* Tile Entity Renderer Columns :
+		 * INDEX
+		 * 1 = ModelLargeColumn
+		 * 2 = ModelMediumColumn
+		 * 3 = ModelSmallColumn
+		*/			
+						
 		//All Large Columns
-		TileEntitySpecialRenderer allLarge = new TileEntityLargeColumnRenderer(KimptonCore.allLarge.getUnlocalizedName().substring(5));
+		TileEntitySpecialRenderer allLarge = new TileEntityRendererLargeColumn(KimptonCore.allLarge.getUnlocalizedName().substring(5), 1);
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBlock.class, allLarge);
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(KimptonCore.allLarge), new HandEntityRenderer(allLarge, new TileEntityBlock()));
+			
+				
+		
 	}
 	
 	public void registerTileEntitySpecialRenderer(){	

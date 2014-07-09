@@ -20,15 +20,25 @@ import net.minecraft.util.RegistryNamespaced;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 
-public class TileEntityLargeColumnRenderer extends TileEntitySpecialRenderer{
+public class TileEntityRendererLargeColumn extends TileEntitySpecialRenderer{
 	
-	private ModelLargeColumn model;	
+	private ModelLargeColumn model;
 	private ResourceLocation texture;
 			
-	public TileEntityLargeColumnRenderer(String name){
-		this.model = new ModelLargeColumn();
+	public TileEntityRendererLargeColumn(String name, int x){
+		
+		switch (x){
+		case 1:
+			model = new ModelLargeColumn();
+			break;
+		case 2:
+			model = new ModelLargeColumn();
+			break;
+		}
+		
 		this.texture = new ResourceLocation(KimptonCore.modid + ":" + "/textures/blocks/" + name + ".png");
 	}
+
 
 
 	@Override

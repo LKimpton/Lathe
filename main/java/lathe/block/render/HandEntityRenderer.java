@@ -16,7 +16,7 @@ public class HandEntityRenderer implements IItemRenderer {
 	public HandEntityRenderer(TileEntitySpecialRenderer render, TileEntity entity) {
 		this.entity = entity;
 		this.render = render;
-	}	
+	}
 	
 	@Override
 	public boolean handleRenderType(ItemStack item, ItemRenderType type) {

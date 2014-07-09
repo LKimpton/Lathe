@@ -2,7 +2,7 @@ package lathe.block;
 
 import lathe.KimptonCore;
 import lathe.block.entity.TileEntityBlock;
-import lathe.block.render.TileEntityLargeColumnRenderer;
+import lathe.block.render.TileEntityRendererLargeColumn;
 import lathe.common.ClientProxy;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -29,6 +29,7 @@ public class LargeColumnProperties extends BlockContainer{
 	public boolean renderAsNormalBlock(){
 		return false;
 	}
+	
 	@Override
 	public TileEntity createNewTileEntity(World arg0, int arg1) {
 		return new TileEntityBlock();
